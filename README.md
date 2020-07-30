@@ -1,6 +1,8 @@
 # flutter_tutorial_20200730
 
 Study with 입문자를 위한 플러터 튜토리얼 by 재즐보프
+- 메모앱입니다. 
+https://youtu.be/Cwhzmy-oZSg
 
 ## Getting Started
 
