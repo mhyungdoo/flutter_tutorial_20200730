@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'edit_page.dart';
+import 'edit.dart';
 
 
 class MyHomePage extends StatefulWidget {

@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'memo.dart';
+import 'db.dart';
+
+
+
 
 class EditPage extends StatelessWidget {
+  String title = '';
+  String text = '';
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +22,7 @@ class EditPage extends StatelessWidget {
           ),
           IconButton(
             icon: const Icon(Icons.save),
-            onPressed: () {},
+            onPressed: saveDB,
           ),
         ],
       ),
@@ -59,4 +68,26 @@ class EditPage extends StatelessWidget {
 
     );
   }
+}
+
+
+  Future<void> save DB() async {
+
+  DBHelper sd = DBHelper();
+
+  var fido = Memo(
+    id: 3,
+    title: this.title,
+    text: this.text,
+    createTime: DateTime.now().toString(),
+    editTime: DataTime.now().toString(),
+  );
+
+  await sd.insertMemo(fido);
+
+  print(await sd.memos());
+
+
+  )
+
 }
