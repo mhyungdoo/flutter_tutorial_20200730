@@ -12,21 +12,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0; // 언더바는 해당 클래스 내부에서만 사용하는 변수를 정의할 때 사용함.
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text("You have pushed the button how many times:"),
 
-          ],
-        ),
+      body: ListView(
+        physics: BouncingScrollPhysics(),
+        children: <Widget>[
+          Row(children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(left: 20, top: 20, bottom: 20),
+              child: Text('메모메모', style: TextStyle(fontSize: 36),),
+            )
+
+          ],),
+          ...LoadMemo(),
+        ],
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: (){
@@ -43,4 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 
+
+}
+
+
+List<Widget> LoadMemo() {
+  List<Widget> memoList = [];
+  memoList.add(Container(color:Colors.purpleAccent, height: 100,));
+  memoList.add(Container(color:Colors.yellow, height: 100,));
+  return memoList;
 }
